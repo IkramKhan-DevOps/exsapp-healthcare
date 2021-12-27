@@ -210,3 +210,15 @@ ACCOUNT_USERNAME_REQUIRED = False
 OLD_PASSWORD_FIELD_ENABLED = True
 LOGOUT_ON_PASSWORD_CHANGE = False
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+""" AI ------------------------------------------------------------------------------------------------ """
+
+labels_ai = {
+    '0': 'apple_pie', '1': 'chicken_wing', '2': 'chocolate_cake', '3': 'club_sandwich', '4': 'cup_cake',
+    '5': 'donut',
+    '6': 'fish_and_chips', '7': 'french_fries', '8': 'french_toast', '9': 'fried_rice', '10': 'garlic_bread',
+    '11': 'hamburger',
+    '12': 'hot_dog', '13': 'ice_cream', '14': 'omelette', '15': 'oysters', '16': 'pizza', '17': 'samosa',
+    '18': 'sushi',
+    '19': 'waffels'
+}

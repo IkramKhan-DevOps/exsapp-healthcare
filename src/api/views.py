@@ -1,6 +1,9 @@
+import os
+
 from rest_framework import generics
 from rest_framework import permissions
 
+from core import settings
 from src.accounts.models import User
 from .serializers import (
     CaptureSerializer,
@@ -17,7 +20,15 @@ class CaptureListView(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+        capture = serializer.save(user=self.request.user)
+
+        # AI CALL -------------------------------------
+        _file = open(os.path.join(settings.BASE_DIR, 'food_densenet.h5'))
+        capture.accuracy = 100
+        capture.calories = 100
+        capture.category = "No Category"
+        capture.save()
+        # ---------------------------------------------
 
 
 class CaloriesConsumptionListView(generics.ListCreateAPIView):
